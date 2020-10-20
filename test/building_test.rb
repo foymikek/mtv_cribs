@@ -101,3 +101,5 @@ class BuildingTest < Minitest::Test
     assert_equal renter2, building.renter_with_highest_rent
   end
 end
+
+# unit4 = Apartment.new({number: "D4", monthly_rent: 1500, bathrooms: 2, bedrooms: 3})
