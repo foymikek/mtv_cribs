@@ -50,5 +50,12 @@ class Building
     annual_report
   end
 
-
+  def rooms_by_renter
+    rooms_by_renter_list = Hash.new {|hash, key| hash[key] = {}}
+    rented_units.each do |unit|
+      rooms_by_renter_list[unit.renter.name][:bathrooms] = unit.bathrooms
+      rooms_by_renter_list[unit.renter.name][:bedrooms] = unit.bedrooms
+    end
+    rooms_by_renter_list
+  end
 end
