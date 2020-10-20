@@ -100,6 +100,19 @@ class BuildingTest < Minitest::Test
 
     assert_equal renter2, building.renter_with_highest_rent
   end
-end
 
-# unit4 = Apartment.new({number: "D4", monthly_rent: 1500, bathrooms: 2, bedrooms: 3})
+  def test_building_can_list_apartments_by_bedroom_number
+    building = Building.new
+    unit1 = Apartment.new({number: "A1", monthly_rent: 1200, bathrooms: 1, bedrooms: 1})
+    unit2 = Apartment.new({number: "B2", monthly_rent: 999, bathrooms: 1, bedrooms: 2})
+    unit3 = Apartment.new({number: "C3", monthly_rent: 1150, bathrooms: 2, bedrooms: 2})
+    unit4 = Apartment.new({number: "D4", monthly_rent: 1500, bathrooms: 2, bedrooms: 3})
+    expected = {
+          3 => ["D4" ],
+          2 => ["B2", "C3"],
+          1 => ["A1"]
+            }
+
+    assert_equal expected, building.units_by_number_of_bedrooms
+  end
+end
