@@ -19,6 +19,7 @@ class BuildingTest < Minitest::Test
 
     building.add_unit(unit1)
     building.add_unit(unit2)
+
     expected = [unit1, unit2]
     assert_equal expected, building.units
   end
@@ -27,8 +28,10 @@ class BuildingTest < Minitest::Test
     building = Building.new
     unit1 = Apartment.new({number: "A1", monthly_rent: 1200, bathrooms: 1, bedrooms: 1})
     unit2 = Apartment.new({number: "B2", monthly_rent: 999, bathrooms: 2, bedrooms: 2})
+    building.add_unit(unit1)
+    building.add_unit(unit2)
     renter1 = Renter.new("Aurora")
-
+require "pry"; binding.pry
     unit1.add_renter(renter1)
     building.add_units_renter(unit1)
 
