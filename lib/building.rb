@@ -41,4 +41,13 @@ class Building
     end
     unit_by_bedrooms
   end
+
+  def annual_breakdown
+    annual_report = Hash.new {|hash, key| hash[key] = 0}
+    rented_units.each do |unit|
+      annual_report[unit.renter.name] = (unit.monthly_rent * 12)
+    end
+    annual_report
+  end
+
 end
