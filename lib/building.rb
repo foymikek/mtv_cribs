@@ -20,4 +20,10 @@ class Building
     end
     total / (@units.count).to_f
   end
+
+  def rented_units
+    @units.select do |unit|
+      unit.renter != nil
+    end
+  end
 end
