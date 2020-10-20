@@ -8,4 +8,8 @@ class Building
   def add_unit(new_unit)
     @units << new_unit
   end
+
+  def add_units_renter(unit)
+    @renters << unit.renter.name
+  end
 end
