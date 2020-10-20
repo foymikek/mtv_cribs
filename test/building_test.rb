@@ -107,6 +107,10 @@ class BuildingTest < Minitest::Test
     unit2 = Apartment.new({number: "B2", monthly_rent: 999, bathrooms: 1, bedrooms: 2})
     unit3 = Apartment.new({number: "C3", monthly_rent: 1150, bathrooms: 2, bedrooms: 2})
     unit4 = Apartment.new({number: "D4", monthly_rent: 1500, bathrooms: 2, bedrooms: 3})
+    building.add_unit(unit1)
+    building.add_unit(unit2)
+    building.add_unit(unit3)
+    building.add_unit(unit4)
     expected = {
           3 => ["D4" ],
           2 => ["B2", "C3"],

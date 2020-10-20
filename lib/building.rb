@@ -33,4 +33,6 @@ class Building
     end
     unit.renter
   end
+
+
 end
