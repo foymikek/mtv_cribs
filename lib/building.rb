@@ -50,4 +50,5 @@ class Building
     annual_report
   end
 
+
 end
